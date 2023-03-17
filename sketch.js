@@ -1,25 +1,20 @@
-let picture
+let images=[]
 let tiles =[]
 
 function preload(){
-for (p=0;p<15;p++){
-  picture = loadImage("images/img"+p+".png")
-  tiles[p] = new tiles(images[p])
-  tiles.push(tile)
+for (p=0;p<16;p++){
+  let picture = loadImage("images/img"+p+".png")
+  images.push(picture)
 }
 }
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth,windowHeight);
 
 }
 
 function draw() {
-  background(0);
-  puzzlemaker()
+  background(220);
+  for(let tile of tiles)
+  tile.display()
 }
 
-function puzzlemaker(){
-  for (p=0;p>15;p++){
-image(tiles[p].sprite,0,0,p*width/4-2,p*height/4-2)
-  }
-}
